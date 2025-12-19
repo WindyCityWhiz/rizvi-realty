@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizvi Realty | Chicago Luxury Apartment Locator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --compass-black: #000000;
+            --compass-white: #ffffff;
+            --compass-gray: #f4f4f4;
+            --compass-text-gray: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--compass-black); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 5%; position: fixed; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #eee;
+        }
+        .logo { font-weight: 600; font-size: 1.4rem; letter-spacing: 3px; text-transform: uppercase; }
+        .nav-links a { text-decoration: none; color: var(--compass-black); margin-left: 30px; font-size: 0.85rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 200; text-transform: uppercase; letter-spacing: 8px; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 600px; margin-bottom: 40px; }
+        .btn-cta { background: var(--compass-white); color: var(--compass-black); padding: 18px 40px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .btn-cta:hover { background: var(--compass-black); color: var(--compass-white); }
+
+        /* Lead Gen Form (Mimicking Scavo's Inquiry Tool) */
+        .inquiry-section { padding: 80px 5%; background: var(--compass-white); text-align: center; }
+        .form-container { max-width: 900px; margin: 0 auto; background: var(--compass-gray); padding: 50px; border-radius: 0px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+        .form-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+        .form-group label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .form-group input, .form-group select { padding: 15px; border: 1px solid #ccc; background: white; font-family: inherit; }
+        .full-width { grid-column: span 2; }
+        .btn-submit { background: var(--compass-black); color: white; border: none; padding: 20px; text-transform: uppercase; font-weight: 600; cursor: pointer; margin-top: 20px; letter-spacing: 2px; }
+
+        /* How It Works (Mimicking Scavo's 1-2-3 Step) */
+        .steps { padding: 100px 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .step-item h3 { margin: 20px 0; font-weight: 600; text-transform: uppercase; font-size: 1.1rem; }
+        .step-num { font-size: 3rem; font-weight: 100; color: #ddd; display: block; }
+        .step-item p { color: var(--compass-text-gray); font-size: 0.95rem; }
+
+        /* Featured Neighborhoods */
+        .neighborhoods { padding: 100px 5%; background: var(--compass-gray); }
+        .n-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .n-card { position: relative; height: 350px; overflow: hidden; }
+        .n-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .n-card:hover img { transform: scale(1.1); }
+        .n-overlay { position: absolute; bottom: 30px; left: 30px; color: white; }
+        .n-overlay h4 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Footer */
+        footer { background: var(--compass-black); color: white; padding: 80px 5%; text-align: center; }
+        .footer-logo { font-size: 2rem; letter-spacing: 5px; margin-bottom: 20px; }
+        .disclaimer { font-size: 0.7rem; color: #888; max-width: 800px; margin: 40px auto; line-height: 1.8; }
+        
+        @media (max-width: 768px) {
+            .form-grid, .steps, .n-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Rizvi Realty</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#search">Find Apartment</a>
+            <a href="#">Buying</a>
+            <a href="#">Team</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Find Your Luxury</h1>
+        <p>Premium apartment locating and real estate services in Chicago's hottest neighborhoods.</p>
+        <a href="#search" class="btn-cta">Start Your Search</a>
+    </section>
+
+    <section class="steps">
+        <div class="step-item">
+            <span class="step-num">01</span>
+            <h3>Connect With Us</h3>
+            <p>Fill out our inquiry form and tell us exactly what you're looking for in your next luxury home.</p>
+        </div>
+        <div class="step-item">
+            <span class="step-num">02</span>
+            <h3>Tailored List</h3>
+            <p>Our team curates a custom list of properties with real-time pricing and exclusive specials just for you.</p>
+        </div>
+        <div class="step-item">
+            <span class="step-num">03</span>
+            <h3>Tours & Closing</h3>
+            <p>We schedule and accompany you on private tours, ensuring you get the best deal possible.</p>
+        </div>
+    </section>
+
+    <section class="inquiry-section" id="search">
+        <h2 style="text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px;">TELL US WHAT YOU'RE LOOKING FOR</h2>
+        <div class="form-container">
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Interest</label>
+                        <select>
+                            <option>Renting</option>
+                            <option>Buying</option>
+                            <option>Selling</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Max Budget</label>
+                        <input type="number" placeholder="$3,000">
+                    </div>
+                    <div class="form-group">
+                        <label>Bedrooms</label>
+                        <select>
+                            <option>Studio</option>
+                            <option>1 Bedroom</option>
+                            <option>2 Bedrooms</option>
+                            <option>3+ Bedrooms</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Move-in Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Notes (Specs/Pets/Amenities)</label>
+                        <input type="text" placeholder="I need a dog park and floor-to-ceiling windows...">
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit full-width">Get My Personalized List</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="neighborhoods">
+        <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 50px;">Featured Neighborhoods</h2>
+        <div class="n-grid">
+            <div class="n-card">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=800&auto=format&fit=crop" alt="West Loop">
+                <div class="n-overlay"><h4>West Loop</h4></div>
+            </div>
+            <div class="n-card">
+                <img src="https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=800&auto=format&fit=crop" alt="River North">
+                <div class="n-overlay"><h4>River North</h4></div>
+            </div>
+            <div class="n-card">
+                <img src="https://images.unsplash.com/photo-1524413139048-4735316e6d36?q=80&w=800&auto=format&fit=crop" alt="Gold Coast">
+                <div class="n-overlay"><h4>Gold Coast</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">RIZVI REALTY</div>
+        <p>2350 N Lincoln Ave, Chicago, IL 60614</p>
+        <p>info@rizvirealty.com | (312) 555-0199</p>
+        <div class="disclaimer">
+            Rizvi Realty is a team of real estate agents affiliated with Compass Real Estate. Compass Real Estate is a licensed real estate broker and abides by all applicable equal housing opportunity laws. All material presented herein is intended for informational purposes only.
+        </div>
+        <p style="font-size: 0.6rem; margin-top: 20px;">© 2025 Rizvi Realty | Powered by Luxury Design
